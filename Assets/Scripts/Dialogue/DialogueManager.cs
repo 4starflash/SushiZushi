@@ -11,7 +11,7 @@ public class DialogueManager : MonoBehaviour
 
     private int index;
 
-    private void StartDialogue(DialogueData data)
+    public void StartDialogue(DialogueData data)
     {
         dialogueBox.SetActive(true);
         currentData = data;
@@ -20,7 +20,7 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = currentData.DataClass.dialogueLines[index];
     }
 
-    private void NextDialogue()
+    public void NextDialogue()
     {
         index++;
 
@@ -28,7 +28,7 @@ public class DialogueManager : MonoBehaviour
         else EndDialogue();
     }
 
-    private void EndDialogue()
+    public void EndDialogue()
     {
         dialogueBox.SetActive(false);
         currentData = null;
