@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13dbc9d11409bf14fad1fe147b90c59b, type: 3}
-  m_Name: NpcDialogue
+  m_Name: Npc2
   m_EditorClassIdentifier: 
   m_DataClass:
-    m_speakerName: Joe fish
-    m_speakerIcon: {fileID: 21300000, guid: ca67ae1efb1de1b469da52781fea229b, type: 3}
+    m_speakerName: Bonkman
+    m_speakerIcon: {fileID: 21300000, guid: e30db17bca397c2478d9d597b5fa9f94, type: 3}
     m_dialogueLines:
-    - Hello! foaso afhadofo wj we9 cawkljfao lmaljiafjao adlkadfjlaji
-    - I am fish
-    - fish I am
-    - go away now
+    - Good day to you.
+    - I want hotdog.
+    - Hotdog.

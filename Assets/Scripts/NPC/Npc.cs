@@ -4,19 +4,22 @@ using System;
 public class Npc : MonoBehaviour
 {
     [SerializeField] private DialogueData dialogueData;
+    [SerializeField] private OrderData orderData;
+    private bool _interacted = false;
 
-    private void OnEnable()
-    {
-        PlayerInteract.OnGetDialogue += SendDialogue;
-    }
+    public static event Action<DialogueData> OnSendDialogue;
+    public static event Action<OrderData> OnSendOrder;
+    public static event Action OnInteract;
 
-    private void Disable()
-    {
-        PlayerInteract.OnGetDialogue -= SendDialogue;
-    }
 
-    private void SendDialogue()
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        ManagerLocator.Instance.dialogueManager.StartDialogue(dialogueData);
+        if (collider.gameObject.CompareTag("Player"))
+        {
+            OnInteract();
+            OnSendDialogue?.Invoke(dialogueData);
+            OnSendOrder?.Invoke(orderData);
+            Debug.Log("talking");
+        }
     }
 }

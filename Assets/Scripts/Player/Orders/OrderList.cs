@@ -9,10 +9,9 @@ public class OrderList : MonoBehaviour
 
     [SerializeField] OrderListData orderListData;
 
-    private void Update()
+    private void OnEnable()
     {
-        if(Input.GetKeyDown(KeyCode.Z))
-            ShowOrdersOnList();
+        ShowOrdersOnList();
     }
 
     private void ShowOrdersOnList()
@@ -23,6 +22,12 @@ public class OrderList : MonoBehaviour
             {
                 orderIcons[i].sprite = orderListData.orderList[i].Icon;
                 orderDetails[i].text = orderListData.orderList[i].Order;
+            }
+
+            else
+            {
+                orderIcons[i].sprite = null;
+                orderDetails[i].text = "";
             }
         }
     }

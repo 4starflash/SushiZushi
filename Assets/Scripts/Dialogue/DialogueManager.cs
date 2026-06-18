@@ -13,6 +13,16 @@ public class DialogueManager : MonoBehaviour
 
     private int _index;
 
+    private void OnEnable()
+    {
+        Npc.OnSendDialogue += StartDialogue;
+    }
+
+    private void OnDisable()
+    {
+        Npc.OnSendDialogue -= StartDialogue;
+    }
+
     public void StartDialogue(DialogueData data)
     {
         dialogueBox.SetActive(true);
