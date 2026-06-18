@@ -9,13 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13dbc9d11409bf14fad1fe147b90c59b, type: 3}
-  m_Name: NpcDialogue
+  m_Script: {fileID: 11500000, guid: a39ef4f6ad579d14a9f5c54f49ad52c6, type: 3}
+  m_Name: PlayerData
   m_EditorClassIdentifier: 
   m_DataClass:
-    m_speakerName: Joe fish
-    m_speakerIcon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-    m_dialogueLines:
-    - Hello!
-    - I am fish
-    - fish I am
+    m_respawnPos: {x: 0, y: 0, z: 0}
+    m_walkSpeed: 5
+    m_sprintSpeed: 10

@@ -1,15 +1,17 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
     [SerializeField] private GameObject dialogueBox;
     [SerializeField] private TMP_Text speakerName;
     [SerializeField] private TMP_Text dialogueText;
+    [SerializeField] private Image speakerIcon;
 
     [SerializeField] private DialogueData currentData;
 
-    private int index;
+    private int _index;
 
     public void StartDialogue(DialogueData data)
     {
@@ -17,14 +19,15 @@ public class DialogueManager : MonoBehaviour
         currentData = data;
 
         speakerName.text = currentData.DataClass.speakerName;
-        dialogueText.text = currentData.DataClass.dialogueLines[index];
+        dialogueText.text = currentData.DataClass.dialogueLines[_index];
+        speakerIcon.sprite = currentData.DataClass.speakerIcon;
     }
 
     public void NextDialogue()
     {
-        index++;
+        _index++;
 
-        if (index < currentData.DataClass.dialogueLines.Length) dialogueText.text = currentData.DataClass.dialogueLines[index];
+        if (_index < currentData.DataClass.dialogueLines.Length) dialogueText.text = currentData.DataClass.dialogueLines[_index];
         else EndDialogue();
     }
 
@@ -32,5 +35,6 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueBox.SetActive(false);
         currentData = null;
+        _index = 0;
     }
 }
