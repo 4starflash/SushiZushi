@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private Image speakerIcon;
 
     [SerializeField] private DialogueData currentData;
+
+    public static event Action OnFinishedOrdering;
 
     private int _index;
 
@@ -46,5 +49,6 @@ public class DialogueManager : MonoBehaviour
         dialogueBox.SetActive(false);
         currentData = null;
         _index = 0;
+        OnFinishedOrdering();
     }
 }
