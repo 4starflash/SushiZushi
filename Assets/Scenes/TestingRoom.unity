@@ -2771,6 +2771,24 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &1373445366 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5266059156076786087, guid: 6602f1c3d82149242b933d63016b0aba, type: 3}
+  m_PrefabInstance: {fileID: 8581381598761479788}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1373445369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373445366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fd729a37df9b6344a3b5255253e4803, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sushiData: {fileID: 11400000, guid: c9b701aa9e52eb044ab1af35c268acb1, type: 2}
 --- !u!1 &1375621530
 GameObject:
   m_ObjectHideFlags: 0
@@ -3813,6 +3831,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2862265774995721309, guid: 6602f1c3d82149242b933d63016b0aba, type: 3}
+      propertyPath: inventoryData
+      value: 
+      objectReference: {fileID: 11400000, guid: b67076ef096d02e40ab3c68217f7f621, type: 2}
+    - target: {fileID: 2862265774995721309, guid: 6602f1c3d82149242b933d63016b0aba, type: 3}
       propertyPath: dialogueManager
       value: 
       objectReference: {fileID: 437512880}
@@ -3831,7 +3853,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5266059156076786087, guid: 6602f1c3d82149242b933d63016b0aba, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 1373445369}
   m_SourcePrefab: {fileID: 100100000, guid: 6602f1c3d82149242b933d63016b0aba, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
