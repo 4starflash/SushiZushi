@@ -933,7 +933,7 @@ GameObject:
   - component: {fileID: 501477273}
   - component: {fileID: 501477272}
   - component: {fileID: 501477271}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NPC test (1)
   m_TagString: Npc
   m_Icon: {fileID: 0}
@@ -972,8 +972,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Offset: {x: 0.20586658, y: 0}
+  m_Size: {x: 3.6762662, y: 3.6762662}
   m_Direction: 0
 --- !u!114 &501477272
 MonoBehaviour:
@@ -1029,8 +1029,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1088208775
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
   m_Color: {r: 0.81879187, g: 1, b: 0, a: 1}
@@ -1500,7 +1500,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 00000000794023bf
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -3425,7 +3425,7 @@ GameObject:
   - component: {fileID: 1668153129}
   - component: {fileID: 1668153132}
   - component: {fileID: 1668153131}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NPC test
   m_TagString: Npc
   m_Icon: {fileID: 0}
@@ -3470,8 +3470,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1088208775
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
   m_Color: {r: 0.47685808, g: 0.5849056, b: 0, a: 1}
@@ -3531,8 +3531,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Offset: {x: 0.08577716, y: 0}
+  m_Size: {x: 3.3674643, y: 3.3674643}
   m_Direction: 0
 --- !u!114 &1668153132
 MonoBehaviour:
@@ -3838,6 +3838,10 @@ PrefabInstance:
       propertyPath: dialogueManager
       value: 
       objectReference: {fileID: 437512880}
+    - target: {fileID: 2862265774995721309, guid: 6602f1c3d82149242b933d63016b0aba, type: 3}
+      propertyPath: npcLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 3231959639819624667, guid: 6602f1c3d82149242b933d63016b0aba, type: 3}
       propertyPath: data
       value: 

@@ -18,18 +18,24 @@ public class DialogueManager : MonoBehaviour
 
     private void OnEnable()
     {
-        Npc.OnSendDialogue += StartDialogue;
+        Npc.OnSendDialogue += SetDialogue;
+        PlayerInteract.OnInteract += StartDialogue;
     }
 
     private void OnDisable()
     {
-        Npc.OnSendDialogue -= StartDialogue;
+        Npc.OnSendDialogue -= SetDialogue;
+        PlayerInteract.OnInteract -= StartDialogue;
     }
 
-    public void StartDialogue(DialogueData data)
+    private void SetDialogue(DialogueData data)
+    {
+        currentData = data;
+    }
+    
+    public void StartDialogue()
     {
         dialogueBox.SetActive(true);
-        currentData = data;
 
         speakerName.text = currentData.DataClass.speakerName;
         dialogueText.text = currentData.DataClass.dialogueLines[_index];

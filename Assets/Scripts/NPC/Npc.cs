@@ -42,6 +42,7 @@ public class Npc : MonoBehaviour
         }
     }
     
+    // Npc switches to moving state
     private void SwitchToMove()
     {
         if(currentState == NpcState.Talking)
@@ -54,13 +55,14 @@ public class Npc : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Player"))
         {
-            OnInteract();
+            OnInteract.Invoke();
             OnSendDialogue?.Invoke(dialogueData);
             OnSendOrder?.Invoke(orderData);
             currentState = NpcState.Talking;
         }
     }
 
+    // Npc moves to table after giving order
     private void MoveToTable()
     {
         transform.position = Vector2.Lerp(transform.position, TableList.Instance.tableNumber[tableNumber].position, speed * Time.deltaTime);
