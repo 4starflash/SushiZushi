@@ -15,8 +15,8 @@ MonoBehaviour:
   m_orderList:
   - {fileID: 11400000, guid: 5c072cc448f954a45bee78a94e3e1e8d, type: 2}
   - {fileID: 11400000, guid: 5c072cc448f954a45bee78a94e3e1e8d, type: 2}
-  - {fileID: 11400000, guid: 45cb434bec7cb974fa9805355c237e4d, type: 2}
   - {fileID: 11400000, guid: 5c072cc448f954a45bee78a94e3e1e8d, type: 2}
   - {fileID: 11400000, guid: 45cb434bec7cb974fa9805355c237e4d, type: 2}
-  - {fileID: 11400000, guid: 5c072cc448f954a45bee78a94e3e1e8d, type: 2}
-  - {fileID: 11400000, guid: 5c072cc448f954a45bee78a94e3e1e8d, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

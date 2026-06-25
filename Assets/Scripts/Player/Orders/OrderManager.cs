@@ -9,10 +9,16 @@ public class OrderManager : MonoBehaviour
     private void Start()
     {
         Npc.OnSendOrder += RetrieveOrder;
+        PlayerInteract.OnCompleteOrder += RemoveOrder;
     }
 
     private void RetrieveOrder(OrderData data)
     {
         m_OrderListData.AddOrder(data);
+    }
+
+    private void RemoveOrder(OrderData data)
+    {
+        m_OrderListData.RemoveOrder(data);
     }
 }

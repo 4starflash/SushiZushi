@@ -6,14 +6,19 @@ public class Npc : MonoBehaviour
     private enum NpcState { Talking, MovingToTable, Waiting }
     private NpcState currentState = NpcState.Waiting;
 
+    private bool _gaveOrder = false;
+
+    // Dialogue info
     [SerializeField] private DialogueData dialogueData;
     [SerializeField] private OrderData orderData;
 
+    // Tabling info
     [SerializeField] private int tableNumber;
     [SerializeField] private float speed = 5f;
 
     public static event Action<DialogueData> OnSendDialogue;
     public static event Action<OrderData> OnSendOrder;
+    public static event Action<OrderData> OnRemindOrder;
     public static event Action OnInteract;
 
     private void OnEnable()
@@ -55,10 +60,20 @@ public class Npc : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Player"))
         {
-            OnInteract.Invoke();
-            OnSendDialogue?.Invoke(dialogueData);
-            OnSendOrder?.Invoke(orderData);
-            currentState = NpcState.Talking;
+            if (!_gaveOrder)
+            {
+                OnInteract.Invoke();
+                OnSendDialogue?.Invoke(dialogueData);
+                OnSendOrder?.Invoke(orderData);
+                currentState = NpcState.Talking;
+                _gaveOrder = true;
+            }
+
+            else
+            {
+                OnRemindOrder?.Invoke(orderData);
+            }
+
         }
     }
 

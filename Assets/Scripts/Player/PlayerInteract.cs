@@ -8,6 +8,7 @@ public class PlayerInteract : MonoBehaviour
 
     [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private PlayerInventoryData inventoryData;
+    private OrderData _currentOrder;
 
     private int _requiredTopLayer;
     private int _requiredMiddleLayer;
@@ -17,6 +18,7 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] private LayerMask npcLayer;
 
     public static event Action OnInteract;
+    public static event Action<OrderData> OnCompleteOrder;
 
     private void Start()
     {
@@ -25,13 +27,13 @@ public class PlayerInteract : MonoBehaviour
 
     private void OnEnable()
     {
-        Npc.OnSendOrder += AddOrder;
+        Npc.OnRemindOrder += AddOrder;
         DialogueManager.OnFinishedOrdering += StopInteracting;
     }
 
     private void OnDisable()
     {
-        Npc.OnSendOrder -= AddOrder;
+        Npc.OnRemindOrder -= AddOrder;
         DialogueManager.OnFinishedOrdering -= StopInteracting;
     }
 
@@ -79,6 +81,7 @@ public class PlayerInteract : MonoBehaviour
     // Adds order requirements
     private void AddOrder(OrderData data)
     {
+        _currentOrder = data;
         _requiredTopLayer = data.topLayerID;
         _requiredMiddleLayer = data.middleLayerID;
         _requiredBottomLayer = data.bottomLayerID;
@@ -91,6 +94,7 @@ public class PlayerInteract : MonoBehaviour
             if (inventoryData.currentSushi.sushiDataClass.topLayer == _requiredTopLayer && inventoryData.currentSushi.sushiDataClass.middleLayer == _requiredMiddleLayer && inventoryData.currentSushi.sushiDataClass.bottomLayer == _requiredBottomLayer)
             {
                 Debug.Log("correct!");
+                OnCompleteOrder?.Invoke(_currentOrder);
 
             }
             else
