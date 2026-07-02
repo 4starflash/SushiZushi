@@ -3,8 +3,8 @@ using System;
 
 public class Npc : MonoBehaviour
 {
-    private enum NpcState { Talking, MovingToTable, Waiting }
-    private NpcState currentState = NpcState.Waiting;
+    private enum NpcState { Entering, Talking, MovingToTable, Waiting }
+    private NpcState currentState = NpcState.Entering;
 
     private bool _gaveOrder = false;
 
@@ -12,7 +12,7 @@ public class Npc : MonoBehaviour
     [SerializeField] private DialogueData dialogueData;
     [SerializeField] private OrderData orderData;
 
-    // Tabling info
+    // Movement info
     [SerializeField] private int tableNumber;
     [SerializeField] private float speed = 5f;
 
@@ -35,6 +35,10 @@ public class Npc : MonoBehaviour
     {
         switch (currentState)
         {
+            case NpcState.Entering:
+                MoveToRegister();
+                break;
+
             case NpcState.Talking:
                 break;
 
@@ -82,4 +86,10 @@ public class Npc : MonoBehaviour
     {
         transform.position = Vector2.Lerp(transform.position, TableList.Instance.tableNumber[tableNumber].position, speed * Time.deltaTime);
     }
+
+    private void MoveToRegister()
+    {
+        transform.position = Vector2.Lerp(transform.position, TableList.Instance.registerTable.position, speed * Time.deltaTime);
+    }
+
 }

@@ -9,14 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eecd27166bbbd174f9e0ec3af0acc7ad, type: 3}
-  m_Name: OrderListData
+  m_Script: {fileID: 11500000, guid: 0cca3964dcdebba4db577d54e7b99b2d, type: 3}
+  m_Name: Bottom Layer 5
   m_EditorClassIdentifier: 
-  m_orderList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  m_DataClass:
+    m_Icon: {fileID: 1280149555, guid: fb8e78b1cc92f4440a07d403dc903347, type: 3}
+    m_Id: 5

@@ -5,6 +5,7 @@ public class TableList : MonoBehaviour
     public static TableList Instance { get; private set; }
 
     public Transform[] tableNumber;
+    public Transform registerTable;
 
     private void Awake()
     {

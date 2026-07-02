@@ -7,7 +7,7 @@ public class PlayerInteract : MonoBehaviour
     private InteractState currentState = InteractState.NotInteracting;
 
     [SerializeField] private DialogueManager dialogueManager;
-    [SerializeField] private PlayerInventoryData inventoryData;
+    [SerializeField] private PlayerSushiData playerSushiData;
     private OrderData _currentOrder;
 
     private int _requiredTopLayer;
@@ -89,18 +89,15 @@ public class PlayerInteract : MonoBehaviour
 
     private void CheckSushi()
     {
-        if (inventoryData.currentSushi != null)
+        if (playerSushiData.TopId == _requiredTopLayer && playerSushiData.MiddleId == _requiredMiddleLayer && playerSushiData.BottomId == _requiredBottomLayer)
         {
-            if (inventoryData.currentSushi.sushiDataClass.topLayer == _requiredTopLayer && inventoryData.currentSushi.sushiDataClass.middleLayer == _requiredMiddleLayer && inventoryData.currentSushi.sushiDataClass.bottomLayer == _requiredBottomLayer)
-            {
-                Debug.Log("correct!");
-                OnCompleteOrder?.Invoke(_currentOrder);
+            Debug.Log("correct!");
+            OnCompleteOrder?.Invoke(_currentOrder);
 
-            }
-            else
-            {
-                Debug.Log("wrong!");
-            }
+        }
+        else
+        {
+            Debug.Log("wrong!");
         }
     }
 
