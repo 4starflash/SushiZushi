@@ -20,6 +20,7 @@ public class Npc : MonoBehaviour
     public static event Action<OrderData> OnSendOrder;
     public static event Action<OrderData> OnRemindOrder;
     public static event Action OnInteract;
+    public static event Action OnArriveAtRegister;
 
     private void OnEnable()
     {
@@ -51,10 +52,12 @@ public class Npc : MonoBehaviour
         }
     }
     
-    // Npc switches to moving state
+    // Npc switches to moving state and sends order data to player upon finishing dialogue
     private void SwitchToMove()
     {
-        if(currentState == NpcState.Talking)
+        OnSendOrder?.Invoke(orderData);
+
+        if (currentState == NpcState.Talking)
         {
             currentState = NpcState.MovingToTable;
         }
@@ -68,7 +71,6 @@ public class Npc : MonoBehaviour
             {
                 OnInteract.Invoke();
                 OnSendDialogue?.Invoke(dialogueData);
-                OnSendOrder?.Invoke(orderData);
                 currentState = NpcState.Talking;
                 _gaveOrder = true;
             }
@@ -90,6 +92,14 @@ public class Npc : MonoBehaviour
     private void MoveToRegister()
     {
         transform.position = Vector2.Lerp(transform.position, TableList.Instance.registerTable.position, speed * Time.deltaTime);
+
+        if (Vector2.Distance(transform.position, TableList.Instance.registerTable.position) <= .1f) 
+        {
+            Debug.Log("arrived!");
+
+            OnArriveAtRegister?.Invoke();
+            currentState = NpcState.Waiting;
+        }
     }
 
 }

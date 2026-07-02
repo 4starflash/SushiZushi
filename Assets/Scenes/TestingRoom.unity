@@ -2236,7 +2236,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 664400757}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: ShowMiddleLayerSelect
         m_Mode: 1
@@ -3100,6 +3100,7 @@ GameObject:
   - component: {fileID: 437512881}
   - component: {fileID: 437512882}
   - component: {fileID: 437512883}
+  - component: {fileID: 437512884}
   m_Layer: 0
   m_Name: Manager
   m_TagString: GameController
@@ -3180,6 +3181,24 @@ MonoBehaviour:
   - {fileID: 6635650450341245222, guid: 4eba40db818f7394b8668a4cd9418e9d, type: 3}
   - {fileID: 6753897140791897387, guid: 7a3b2fff697f1af4bb0e87cb31203022, type: 3}
   spawnLocation: {fileID: 1304302891}
+--- !u!114 &437512884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437512877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c230029dd408e74fab79dcd9b60d2ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orderList: {fileID: 1926154538}
+  topLayerSelect: {fileID: 486675024}
+  middleLayerSelect: {fileID: 1915254424}
+  bottomLayerSelect: {fileID: 1046744406}
+  sushiUI: {fileID: 281148936}
+  registerTimerUI: {fileID: 643693619}
 --- !u!1 &441684298
 GameObject:
   m_ObjectHideFlags: 0
@@ -4722,6 +4741,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 635731074}
   m_CullTransparentMesh: 1
+--- !u!1 &643693619
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 643693620}
+  - component: {fileID: 643693622}
+  - component: {fileID: 643693621}
+  m_Layer: 5
+  m_Name: Timer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &643693620
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643693619}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 753368309}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 438, y: 369}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &643693621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643693619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.41942888, b: 0.0047169924, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 0
+  m_FillOrigin: 2
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &643693622
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643693619}
+  m_CullTransparentMesh: 1
 --- !u!1 &664400751
 GameObject:
   m_ObjectHideFlags: 0
@@ -4734,7 +4828,6 @@ GameObject:
   - component: {fileID: 664400754}
   - component: {fileID: 664400753}
   - component: {fileID: 664400752}
-  - component: {fileID: 664400757}
   - component: {fileID: 664400758}
   m_Layer: 5
   m_Name: Canvas
@@ -4828,23 +4921,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &664400757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 664400751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c230029dd408e74fab79dcd9b60d2ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  orderList: {fileID: 1926154538}
-  topLayerSelect: {fileID: 486675024}
-  middleLayerSelect: {fileID: 1915254424}
-  bottomLayerSelect: {fileID: 1046744406}
-  sushiUI: {fileID: 281148936}
 --- !u!114 &664400758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4872,6 +4948,7 @@ GameObject:
   - component: {fileID: 753368308}
   - component: {fileID: 753368307}
   - component: {fileID: 753368306}
+  - component: {fileID: 753368310}
   m_Layer: 5
   m_Name: WorldSpace UI
   m_TagString: Untagged
@@ -4955,6 +5032,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1345862105}
+  - {fileID: 643693620}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4962,6 +5040,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &753368310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753368305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fa7d37f978f42d4881630593aeca7b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  registTimerObject: {fileID: 643693619}
+  registerTimer: {fileID: 643693621}
+  maxRegisterTimer: 10
 --- !u!1 &777600342
 GameObject:
   m_ObjectHideFlags: 0
@@ -7501,7 +7594,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 664400757}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: ShowTopLayerSelect
         m_Mode: 1
@@ -8095,7 +8188,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 664400757}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: ShowSushiUI
         m_Mode: 1
@@ -10185,7 +10278,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 664400757}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: ShowBottomLayerSelect
         m_Mode: 1
@@ -10796,7 +10889,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 664400757}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: HideSushiUI
         m_Mode: 1

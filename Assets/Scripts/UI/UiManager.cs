@@ -11,15 +11,19 @@ public class UiManager : MonoBehaviour
     [SerializeField] private GameObject bottomLayerSelect;
     [SerializeField] private GameObject sushiUI;
 
+    [SerializeField] private GameObject registerTimerUI;
+
 
     private void OnEnable()
     {
         Npc.OnInteract += HideOrderList;
+        Npc.OnArriveAtRegister += ShowRegisterTimer;
     }
 
     private void Disable()
     {
         Npc.OnInteract -= HideOrderList;
+        Npc.OnArriveAtRegister -= ShowRegisterTimer;
     }
 
     private void Update()
@@ -71,5 +75,10 @@ public class UiManager : MonoBehaviour
         topLayerSelect.SetActive(false);
         middleLayerSelect.SetActive(false);
         bottomLayerSelect.SetActive(true);
+    }
+
+    private void ShowRegisterTimer()
+    {
+        registerTimerUI.SetActive(true);
     }
 }

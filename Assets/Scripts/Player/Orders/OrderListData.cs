@@ -31,8 +31,8 @@ public class OrderListData : ScriptableObject
         List<OrderData> orderDataList = new List<OrderData>(m_orderList);
         orderDataList.Remove(removedOrder);
         m_orderList = orderDataList.ToArray();
-
         System.Array.Resize(ref m_orderList, m_orderList.Length + 1);
         m_orderList[m_orderList.Length - 1] = null;
+
     }
 }
