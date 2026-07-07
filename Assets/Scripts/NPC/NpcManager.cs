@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class NpcManager : MonoBehaviour
 {
+    // this script handles the spawning of new customers
+
     [Header("Customers")]
     [SerializeField] private GameObject[] customers;
 

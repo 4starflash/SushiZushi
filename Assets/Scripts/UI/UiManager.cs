@@ -1,9 +1,11 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class UiManager : MonoBehaviour
 {
+    // this script manages the visibility of UI
+
     [SerializeField] private GameObject orderList;
 
     [SerializeField] private GameObject topLayerSelect;
@@ -13,6 +15,7 @@ public class UiManager : MonoBehaviour
 
     [SerializeField] private GameObject registerTimerUI;
 
+    public static event Action OnConfirmSushi;
 
     private void OnEnable()
     {
@@ -54,6 +57,8 @@ public class UiManager : MonoBehaviour
     {
         sushiUI.SetActive(false);
         Time.timeScale = 1f;
+
+        OnConfirmSushi?.Invoke();
     }
 
     public void ShowTopLayerSelect()

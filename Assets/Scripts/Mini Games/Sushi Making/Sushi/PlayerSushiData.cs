@@ -23,6 +23,9 @@ public class PlayerSushiData : ScriptableObject
         SushiButton.OnSelectTop += CreateLayerTop;
         SushiButton.OnSelectMiddle += CreateLayerMiddle;
         SushiButton.OnSelectBottom += CreateLayerBottom;
+
+        PlayerInteract.OnCorrectOrder += ResetSushiData;
+        PlayerInteract.OnIncorrectOrder += ResetSushiData;
     }
 
     private void Disable()
@@ -30,6 +33,9 @@ public class PlayerSushiData : ScriptableObject
         SushiButton.OnSelectTop -= CreateLayerTop;
         SushiButton.OnSelectMiddle -= CreateLayerMiddle;
         SushiButton.OnSelectBottom -= CreateLayerBottom;
+
+        PlayerInteract.OnCorrectOrder -= ResetSushiData;
+        PlayerInteract.OnIncorrectOrder -= ResetSushiData;
     }
 
     private void CreateLayerTop(LayerData data)
@@ -48,5 +54,15 @@ public class PlayerSushiData : ScriptableObject
     {
         m_BottomIcon = data.DataClass.Icon;
         m_BottomId = data.DataClass.Id;
+    }
+
+    private void ResetSushiData()
+    {
+        m_TopIcon = null;
+        m_TopId = 0;
+        m_MiddleIcon = null;
+        m_MiddleId = 0;
+        m_BottomIcon = null;
+        m_BottomId = 0;
     }
 }

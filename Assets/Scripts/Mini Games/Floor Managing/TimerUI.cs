@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class TimerUI : MonoBehaviour
 {
+    // the timer UI appears when a customer arrives at the reigster
+    // and shows how much time the player has before the customer will leave
+
     [SerializeField] private GameObject registTimerObject;
     [SerializeField] private Image registerTimer;
     [SerializeField] private float maxRegisterTimer = 10f;

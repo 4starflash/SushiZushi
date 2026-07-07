@@ -5,6 +5,8 @@ using System;
 
 public class DialogueManager : MonoBehaviour
 {
+    // this script handles starting, progress, and ending dialogue with NPC's
+
     [SerializeField] private GameObject dialogueBox;
     [SerializeField] private TMP_Text speakerName;
     [SerializeField] private TMP_Text dialogueText;

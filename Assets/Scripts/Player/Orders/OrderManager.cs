@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class OrderManager : MonoBehaviour
 {
+    // this script adds amd removes orders from the order list
+
     [SerializeField] private OrderListData m_OrderListData;
 
     private void Start()

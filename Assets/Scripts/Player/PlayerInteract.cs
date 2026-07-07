@@ -19,6 +19,8 @@ public class PlayerInteract : MonoBehaviour
 
     public static event Action OnInteract;
     public static event Action<OrderData> OnCompleteOrder;
+    public static event Action OnCorrectOrder;
+    public static event Action OnIncorrectOrder;
 
     private void Start()
     {
@@ -39,7 +41,7 @@ public class PlayerInteract : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.X) && currentState == InteractState.Interacting)
         {
             dialogueManager.NextDialogue();
         }
@@ -93,11 +95,13 @@ public class PlayerInteract : MonoBehaviour
         {
             Debug.Log("correct!");
             OnCompleteOrder?.Invoke(_currentOrder);
+            OnCorrectOrder?.Invoke();
 
         }
         else
         {
             Debug.Log("wrong!");
+            OnIncorrectOrder?.Invoke();
         }
     }
 
